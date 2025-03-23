@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants - Food Delivery App</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FF7F50, #FFD700, #32CD32);
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #e67e22;
+        }
+
+        .restaurant {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .restaurant h2 {
+            font-size: 2em;
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f1f1f1;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .food-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .food-info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .food-info h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .food-info p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .food-info .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .rating .stars {
+            color: #FFD700;
+            font-size: 1.3em;
+        }
+
+        .order-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Explore Restaurants</h1>
+
+        <!-- Restaurant 1 -->
+        <div class="restaurant">
+            <h2>Pizza Palace</h2>
+
+            <!-- Food Item 1 -->
+            <div class="food-item">
+                <img src="https://i0.wp.com/cookingitalians.com/wp-content/uploads/2024/11/Margherita-Pizza.jpg?fit=1344%2C768&ssl=1" alt="Pizza Margherita">
+                <div class="food-info">
+                    <h3>Pizza Margherita</h3>
+                    <p>Classic cheese pizza with tomato sauce</p>
+                    <div class="price">$12.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.5 (200 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Pizza Margherita')">Order</button>
+            </div>
+
+            <!-- Food Item 2 -->
+            <div class="food-item">
+                <img src="https://images.ctfassets.net/uexfe9h31g3m/6Ey59QkGCRVokMsC4NKnG2/ddcd256987422a05e2b200b8985240af/Pizza_1_copy.jpg?w=2000&h=2000&fm=webp&fit=thumb&q=100" alt="Pepperoni Pizza">
+                <div class="food-info">
+                    <h3>Pepperoni Pizza</h3>
+                    <p>Pizza with spicy pepperoni slices</p>
+                    <div class="price">$14.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>4.8 (350 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Pepperoni Pizza')">Order</button>
+            </div>
+
+            <!-- Food Item 3 -->
+            <div class="food-item">
+                <img src="https://www.thursdaynightpizza.com/wp-content/uploads/2022/06/veggie-pizza-overhead-sliced-720x900.png" alt="Veggie Pizza">
+                <div class="food-info">
+                    <h3>Veggie Pizza</h3>
+                    <p>Fresh vegetables with mozzarella cheese</p>
+                    <div class="price">$13.50</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.3 (150 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Veggie Pizza')">Order</button>
+            </div>
+
+            <!-- Food Item 4 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTggy3RaYKQhD5V2BFfrhAk5AqSIHnP9DrsUA&s" alt="BBQ Chicken Pizza">
+                <div class="food-info">
+                    <h3>BBQ Chicken Pizza</h3>
+                    <p>Grilled chicken with smoky BBQ sauce</p>
+                    <div class="price">$16.50</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>5.0 (100 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('BBQ Chicken Pizza')">Order</button>
+            </div>
+
+            <!-- Food Item 5 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6CqNEU3rr0yFP9Yu3Fs3VO2kItBJa00oMA&s" alt="Hawaiian Pizza">
+                <div class="food-info">
+                    <h3>Hawaiian Pizza</h3>
+                    <p>Pizza with ham, pineapple, and cheese</p>
+                    <div class="price">$15.00</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.4 (180 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Hawaiian Pizza')">Order</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 2 -->
+        <div class="restaurant">
+            <h2>Sushi World</h2>
+
+            <!-- Food Item 1 -->
+            <div class="food-item">
+                <img src="https://norecipes.com/wp-content/uploads/2019/12/best-california-roll-004-500x375.jpg" alt="California Roll">
+                <div class="food-info">
+                    <h3>California Roll</h3>
+                    <p>Sushi with crab and avocado</p>
+                    <div class="price">$10.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.7 (300 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('California Roll')">Order</button>
+            </div>
+
+            <!-- Food Item 2 -->
+            <div class="food-item">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/2/2015/05/8756.jpg?resize=768,574" alt="Tuna Sashimi">
+                <div class="food-info">
+                    <h3>Tuna Sashimi</h3>
+                    <p>Fresh tuna sashimi with wasabi</p>
+                    <div class="price">$15.50</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>5.0 (250 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Tuna Sashimi')">Order</button>
+            </div>
+
+            <!-- Food Item 3 -->
+            <div class="food-item">
+                <img src="https://aisforappleau.com/wp-content/uploads/2023/07/how-to-make-sushi-salmon-nigiri-6.jpg" alt="Salmon Roll">
+                <div class="food-info">
+                    <h3>Salmon Roll</h3>
+                    <p>Fresh salmon with sushi rice</p>
+                    <div class="price">$12.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.2 (120 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Salmon Roll')">Order</button>
+            </div>
+
+            <!-- Food Item 4 -->
+            <div class="food-item">
+                <img src="https://twosleevers.com/wp-content/uploads/2023/03/Shrimp-Tempura-1.png" alt="Ebi Tempura">
+                <div class="food-info">
+                    <h3>Ebi Tempura</h3>
+                    <p>Shrimp tempura served with dipping sauce</p>
+                    <div class="price">$14.00</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>4.8 (400 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Ebi Tempura')">Order</button>
+            </div>
+
+            <!-- Food Item 5 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXDlTLFx1Y1CFg8w0VEge2hPVgA5hBMPiOiA&s" alt="Dragon Roll">
+                <div class="food-info">
+                    <h3>Dragon Roll</h3>
+                    <p>Sushi with eel, avocado, and cucumber</p>
+                    <div class="price">$16.00</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.5 (180 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Dragon Roll')">Order</button>
+            </div>
+        </div>
+
+        <!-- Restaurant 3 -->
+        <div class="restaurant">
+            <h2>Burger Haven</h2>
+
+            <!-- Food Item 1 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIhD3VIrl1qK5TCm5A2sKgq5dVyjL2ORWW_Q&s" alt="Classic Cheeseburger">
+                <div class="food-info">
+                    <h3>Classic Cheeseburger</h3>
+                    <p>Beef patty with melted cheese</p>
+                    <div class="price">$8.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.4 (250 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Classic Cheeseburger')">Order</button>
+            </div>
+
+            <!-- Food Item 2 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4E_hxcgJpqzoLowBgiLzl37IcoIYMzvzdg&s" alt="Bacon Burger">
+                <div class="food-info">
+                    <h3>Bacon Burger</h3>
+                    <p>Juicy beef burger with crispy bacon</p>
+                    <div class="price">$10.99</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>4.8 (300 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Bacon Burger')">Order</button>
+            </div>
+
+            <!-- Food Item 3 -->
+            <div class="food-item">
+                <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2015/06/Veggie-Burger-H1.jpg?fit=600%2C900&ssl=1" alt="Veggie Burger">
+                <div class="food-info">
+                    <h3>Veggie Burger</h3>
+                    <p>Vegetarian patty with fresh veggies</p>
+                    <div class="price">$9.50</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.2 (180 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Veggie Burger')">Order</button>
+            </div>
+
+            <!-- Food Item 4 -->
+            <div class="food-item">
+                <img src="https://www.shutterstock.com/shutterstock/photos/2494108493/display_1500/stock-photo-delicious-cheeseburger-double-cheeseburger-with-pickles-isolated-on-white-background-2494108493.jpg" alt="Double Cheeseburger">
+                <div class="food-info">
+                    <h3>Double Cheeseburger</h3>
+                    <p>Two beef patties with double cheese</p>
+                    <div class="price">$12.50</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>5.0 (500 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Double Cheeseburger')">Order</button>
+            </div>
+
+            <!-- Food Item 5 -->
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkcOnvdQ7RiDJpVQBbx6duq3LxqyEq_3bqDw&s" alt="Chicken Burger">
+                <div class="food-info">
+                    <h3>Chicken Burger</h3>
+                    <p>Crispy chicken patty with lettuce and mayo</p>
+                    <div class="price">$11.00</div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span>4.3 (220 reviews)</span>
+                    </div>
+                </div>
+                <button class="order-btn" onclick="orderFood('Chicken Burger')">Order</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script>
+        function orderFood(itemName) {
+            alert("You have ordered: " + itemName);
+        }
+    </script>
+</body>
+</html>
